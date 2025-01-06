@@ -1,4 +1,6 @@
+import game_management.GameMaster
+
 @main
 def main(): Unit = {
-  println("Hello world!")
+  GameMaster.run()
 }
