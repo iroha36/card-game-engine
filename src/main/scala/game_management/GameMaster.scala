@@ -9,6 +9,7 @@ object GameMaster {
     val deck2 = Deck.initialDeck
     val hand1 = Hand.initialHand
     val hand2 = Hand.initialHand
+    deck1.shuffle()
   }
 }
 
