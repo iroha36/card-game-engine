@@ -7,7 +7,7 @@ import util.{CardContainer, ContainerOps}
 
 import scala.util.Random
 
-case class Deck(cards: List[Card]) extends CardContainer[Deck](cards) 
+case class Deck(cards: List[Card]) extends CardContainer[Deck](cards)
 
 object Deck {
   given ContainerOps[Deck] = ContainerOps.makeOps(Deck.apply)

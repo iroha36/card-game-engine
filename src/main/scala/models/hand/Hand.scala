@@ -7,12 +7,14 @@ import util.{CardContainer, ContainerOps}
 
 import scala.util.Random
 
-case class Hand(cards: List[Card]) extends CardContainer[Hand](cards)
+case class Hand(cards: List[Card]) extends CardContainer[Hand](cards) {
+  def isMax: Boolean = cards.sizeIs == 10
+}
 
-object Hand:
+object Hand {
   given ContainerOps[Hand] = ContainerOps.makeOps(Hand.apply)
 
   lazy val initialHand: Hand =
     val cards: List[Card] = List.fill(2)(WaterFairy()) ++ List.fill(2)(Goblin()) ++ List.fill(1)(FairyCircle())
     Hand(Random.shuffle(cards))
-
+}
